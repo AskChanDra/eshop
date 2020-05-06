@@ -1,0 +1,27 @@
+{
+  "name": "eshop",
+  "version": "1.0.0",
+  "description": "Mobile first responsive E-commerece",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AskChanDra/eshop.git"
+  },
+  "keywords": [
+    "PHP",
+    "JavaScript",
+    "CSS3",
+    "WebPack",
+    "JSON",
+    "vscode"
+  ],
+  "author": "Chandra Prakash Thapa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AskChanDra/eshop/issues"
+  },
+  "homepage": "https://github.com/AskChanDra/eshop#readme"
+}
