@@ -1,2 +1,16 @@
-# eshop
-E- SHOP
+# E-Shop
+
+
+# Design 
+
+
+# Code 
+
+
+# Funtionality
+
+
+# Setup 
+
+
+
