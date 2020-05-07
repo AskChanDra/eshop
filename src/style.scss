@@ -1,0 +1,13 @@
+$color : red;
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color;
+}
+
+#image{
+    background: url('p_1.png');
+    height: 200px;
+    width: auto;
+    background-repeat: no-repeat;
+}
