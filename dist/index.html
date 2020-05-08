@@ -3,11 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpack </title>
+    <title>E-Shop</title>
+    <meta name="description" content="E-Shop Online clothing store." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Chandra Prakash Thapa" />
 </head>
 <body>
-    <h1 id="target">Hello world!</h1>
-    <div id="image"></div>
+    <!-- Container Start-->
+    <div class="container cf">
+        <!-- Header Start-->
+        <div class="shop-header cf">
+            <p class="site-title">Shop</p>
+            <!-- <a href="#" class="continue">Continue Shopping</a> -->
+            <a href="#" class="shop-cart" ><img src="images/shopping-cart-icon.svg" alt="Cart icon" /></a>
+        </div><!-- Header End-->
+        
+        <div class="products">
+            <div class="page-title"><h1>Products</h1></div>
+            <div class="product-tags">
+                <p class="product-tag" href="" data-rel="items">All</p>
+                <p class="product-tag" data-rel="jacket">Jackets</p>
+                <p class="product-tag" data-rel="blazer">Blazers</p>
+                <p class="product-tag" data-rel="tee">Tees</p>
+            </div>            
+            <div style="clear:both;"></div>
+           
+            <ul id="product-list">
+                <li class="items tee">              
+                    <div class="infoWrap"> 
+                        <div class="cartSection">
+                        <img src="images/p_1.svg" alt="P 1" class="itemImg" />
+                            <p class="itemCategory">Tee</p>
+                            <h3 class="product-title">Flash T-Shirt</h3>                    
+                            <p class="qty">$75</p>                    
+                            <p class="add-to-cart"><a href="#" class="btn-add">Add +</a></p>
+                        </div>                  
+                    </div>
+                </li>
+
+                <li class="items jacket">              
+                    <div class="infoWrap"> 
+                        <div class="cartSection">                    
+                            <img src="images/p_2.svg" alt="P 2" class="itemImg" />
+                            <p class="itemCategory">Jacket</p>
+                            <h3 class="product-title">Fur-neck Jacket</h3>
+                                <p class="qty">$315</p>                    
+                                <p class="add-to-cart"><a href="#" class="btn-add btn-plus">Add</a></p>
+                        </div>                        
+                    </div>
+                </li>
+                
+                <li class="items blazer">
+                    <div class="infoWrap"> 
+                        <div class="cartSection">                  
+                            <img src="images/p_3.svg" alt="P 3" class="itemImg" />
+                            <p class="itemCategory">Blazer</p>
+                            <h3 class="product-title">Everyday Classic Blazer</h3>
+                            <p class="qty">$200</p>                    
+                            <p class="add-to-cart"><a href="#" class="btn-add"> Add +</a></p>
+                        </div>  
+                    </div>
+                </li>
+
+                <li class="items tee">
+                    <div class="infoWrap"> 
+                        <div class="cartSection">                  
+                            <img src="images/p_4.svg" alt="P 4" class="itemImg" />
+                            <p class="itemCategory">Tee</p>
+                            <h3 class="product-title">White Striped T-Shirt</h3>
+                            <p class="qty">$200 </p>                    
+                            <p class="add-to-cart"><a href="#" class="btn-add"> Add +</a></p>
+                        </div>  
+                    </div>
+                </li>       
+            </ul>
+        </div>
+    </div><!-- Container End-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
     <script src="index.bundle.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 # E-Shop
 
+- Mobile First E-commerce web application.
 
 # Color
 
@@ -18,8 +19,20 @@ $fifth-color: #E9E7FC;
 
 # Code 
 
+- Development:
 
-# Funtionality
+```bash
+npm run start:dev
+```
+
+- Build 
+
+```bash
+npm run build
+```
+
+
+# Functionality
 
 
 # Setup 

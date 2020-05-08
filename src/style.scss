@@ -1,13 +1,655 @@
-$color : red;
+/* ---------------------------------------
+[Main Stylesheet]
+Project:    	E-Shop - Fullstack E-commerce application
+Version:    	1.0.0
+Last Change:    5/7/2020
+------------------------------------------
 
-h1{
-    font-family: Arial, Helvetica, sans-serif;
-    color: $color;
+[Table of contents]
+
+1. Variables
+2. Fonts
+3. Resources / Css Files
+4. Reset
+5. Global Settings
+6. Mixin
+7. Buttons Style
+8. Header Style
+9. Product Style
+10. Responsive (Min width)
+
+-------------------------------------------*/
+
+
+/***
+
+====================================================================
+	Variables
+====================================================================
+
+***/
+
+$fontFamily: 'Montserrat',
+sans-serif;
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;
+$fontWeightExtraBold: 800;
+$blackColor: #18191F;
+$lightBlackColor: #474A57;
+$whiteColor: #FFFFFF;
+$primaryColor: #1947E5;
+$secondaryColor: #FFBD12;
+$thirdColor: #FFC7DE;
+$fourthColor: #E9E7FC;
+
+/***
+
+====================================================================
+	Fonts
+====================================================================
+
+***/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/***
+
+====================================================================
+	Resources / Css Files
+====================================================================
+
+ ***/
+
+// @import url('fontawesome-all.css');
+// @import url('animate.css');
+
+/***
+
+====================================================================
+    Reset
+====================================================================
+
+ ***/
+
+* {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
 }
 
-#image{
-    background: url('p_1.png');
-    height: 200px;
-    width: auto;
-    background-repeat: no-repeat;
+
+/***
+
+====================================================================
+	Global Settings
+====================================================================
+
+ ***/
+
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+	color: $lightBlackColor;
+}
+
+::-moz-input-placeholder {
+	color: $lightBlackColor;
+}
+
+::-ms-input-placeholder {
+	color: $lightBlackColor;
+}
+
+::selection {
+	background: $secondaryColor;
+	color: #ffffff;
+}
+
+::-moz-selection {
+	background: $secondaryColor;
+	color: #ffffff;
+}
+
+::-webkit-selection {
+	background: $secondaryColor;
+	color: #ffffff;
+}
+
+body {
+	font-size: 12px;
+	color: $blackColor;
+	line-height: 16px;
+	font-weight: $fontWeightBold;
+	background: #ffffff;
+	;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-family: $fontFamily;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: $blackColor;
+}
+
+button,
+a:hover,
+a:focus,
+a:visited {
+	text-decoration: none;
+	outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+	font-weight: $fontWeightMedium;
+	background: none;
+	font-family: $fontFamily;
+}
+
+h3 {
+	font-size: 21px;
+	font-weight: $fontWeightBold;
+}
+
+textarea {
+	overflow: hidden;
+}
+
+p {
+	position: relative;
+	font-size: 12px;
+	line-height: 16px;
+	color: $lightBlackColor;
+	font-weight: $fontWeightMedium;
+}
+
+.container {
+	position: static;
+	max-width: 1024px;
+	padding: 0px;
+	margin: 0 auto;
+}
+
+ul,
+li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
+}
+
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	*zoom: 1;
+}
+
+
+/***
+
+====================================================================
+	Mixin
+====================================================================
+
+ ***/
+
+@mixin transition($transition-property,
+$transition-time,
+$method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+
+/***
+
+====================================================================
+	Button Style
+====================================================================
+
+ ***/
+
+.btn,
+.btn-blue,
+.btn-black {
+	background-color: $lightBlackColor;
+	&:link,
+	&:visited {
+		text-decoration: none;
+		font-family: $fontFamily;
+		letter-spacing: 0;
+		font-size: 17px;
+		padding: 1em 1.5em;
+		color: #fff;
+		font-weight: $fontWeightExtraBold;
+		border-radius: 16px;
+		float: right;
+		text-align: center;
+		@include transition(all,
+		.25s,
+		linear);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		background: $secondaryColor;
+	}
+}
+
+.btn-blue {
+	background: $primaryColor;
+}
+
+.btn-black {
+	background-color: $blackColor;
+}
+
+.btn-arrow {
+	&:after {
+		content: "\276f";
+		padding: 15px 0 15px 15px;
+		position: relative;
+		right: 0;
+		@include transition(all,
+		.15s,
+		linear);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		background: $secondaryColor;
+		&:after {
+			right: -10px;
+		}
+	}
+}
+
+.btn-add {
+	background-color: $secondaryColor;
+	float: right;
+	color: $blackColor;
+	&:link,
+	&:visited {
+		text-decoration: none;
+		border: 2px solid $blackColor;
+		font-family: $fontFamily;
+		letter-spacing: 0;
+		font-size: 17px;
+		line-height: 20px;
+		padding: 5px 10px;
+		font-weight: $fontWeightExtraBold;
+		border-radius: 12px;
+		@include transition(all,
+		.25s,
+		linear);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		background: $thirdColor;
+	}
+}
+
+.btn-plus {
+	&:after {
+		content: "\002B";
+		padding: 7px 5px 7px;
+		position: relative;
+		font-size: 18px;
+		right: 0;
+	}
+}
+
+
+/***
+
+====================================================================
+    Header Style
+====================================================================
+
+***/
+
+.shop-header {
+	padding: 10px 20px;
+	border-bottom: 2px solid #000000;
+	.site-title {
+		font-family: $fontFamily;
+		font-weight: $fontWeightExtraBold;
+		color: $blackColor;
+		font-size: 17px;
+		line-height: 30px;
+		float: left;
+	}
+	.shop-cart {
+		text-decoration: none;
+		float: right;
+	}
+}
+
+
+/***
+
+====================================================================
+    Product Page Style
+====================================================================
+
+***/
+
+.tags {
+	display: table;
+	width: 100%;
+	font-family: $fontFamily;
+	font-size: .75em;
+	li {
+		display: table-cell;
+		padding: 1em 0;
+		text-align: left;
+	}
+}
+
+// CART Items
+.cart,
+.products,
+.page {
+	padding: 10px 0;
+}
+
+.cart,
+.products {
+	.items {
+		display: block;
+		width: 100%;
+		vertical-align: middle;
+		padding: 20px;
+		border-bottom: 2px solid #A1A1A1;
+		.infoWrap {
+			display: table;
+			width: 100%;
+		}
+		.cartSection {
+			display: table-cell;
+			vertical-align: middle;
+			.itemCategory {
+				font-size: 15px;
+				line-height: 20px;
+				color: $lightBlackColor;
+				font-weight: $fontWeightBold;
+			}
+			h3.product-title {
+				line-height: 28px;
+				min-height: 40px;
+			}
+			p {
+				display: inline-block;
+			}
+			.itemImg {
+				width: 4em;
+				border: 2px solid #222;
+				border-radius: 16px;
+				padding: 14px 7px 20px;
+				margin-right: 10px;
+				background: #F95A2C;
+				float: left;
+			}
+			&.qtyWrap,
+			&.prodTotal {
+				text-align: center;
+				p {
+					font-weight: $fontWeightBold;
+				}
+			}
+			.qty {
+				width: 2em;
+				text-align: center;
+				font-size: 21px;
+				padding: .25em;
+				font-weight: $fontWeightExtraBold;
+				color: $blackColor;
+			}
+			.itemImg {
+				width: 100px;
+				display: inline;
+				padding-right: 1em;
+			}
+			.add-to-cart {
+				float: right;
+			}
+		}
+	}
+}
+
+a.remove {
+	text-decoration: none;
+	font-family: $fontFamily;
+	color: #ffffff;
+	font-weight: bold;
+	background: #e0e0e0;
+	padding: .5em;
+	font-size: .75em;
+	display: inline-block;
+	border-radius: 100%;
+	line-height: .85;
+	@include transition(all,
+	.25s,
+	linear);
+	&:hover {
+		background: #f30;
+	}
+}
+
+
+/* TOTAL AND CHECKOUT  */
+
+.subtotal {
+	float: right;
+	width: 35%;
+	.totalRow {
+		padding: .5em;
+		text-align: right;
+		&.final {
+			font-size: 1.25em;
+			font-weight: bold;
+		}
+		span {
+			display: inline-block;
+			padding: 0 0 0 1em;
+			text-align: right;
+		}
+		.label {
+			font-family: $fontFamily;
+			font-size: .85em;
+			text-transform: uppercase;
+			color: #777;
+		}
+		.value {
+			letter-spacing: -.025em;
+			width: 35%;
+		}
+	}
+}
+
+@media only screen and (max-width:480px) {
+	.cart,
+	.products {
+		.items {
+			.cartSection {
+				width: 90%;
+				display: block;
+				float: left;
+				&.qtyWrap {
+					width: 10%;
+					text-align: center;
+					padding: .5em 0;
+					float: right;
+					&:before {
+						content: "QTY";
+						display: block;
+						font-family: $fontFamily;
+						padding: .25em;
+						font-size: .75em;
+					}
+				}
+				&.prodTotal,
+				&.removeWrap {
+					display: none;
+				}
+				.itemImg {
+					width: 30%;
+				}
+			}
+		}
+	}
+	.subtotal {
+		width: 100%;
+	}
+	.btn-blue,
+	.btn-black {
+		width: 100%;
+		max-width: 400px;
+		text-align: center;
+	}
+}
+
+
+/* Product Codes */
+
+#product-list {
+	width: 100%;
+	margin: 5px 0px;
+}
+
+.tile {
+	float: left;
+	height: 200px;
+	width: 20%;
+	border: 1px #fff solid;
+}
+
+.tile:hover {
+	opacity: 0.5;
+}
+
+.web {
+	background: #00C5CD;
+}
+
+.flyers {
+	background: #CC3232;
+}
+
+.bcards {
+	background: #ddd;
+}
+
+.product-tags,
+.page-title {
+	padding: 7px 20px 20px;
+}
+
+.page-title h1 {
+	font-size: 27px;
+	line-height: 32px;
+	font-weight: $fontWeightExtraBold;
+}
+
+.product-tag {
+	padding: 5px 12px;
+	border: 2px $blackColor solid;
+	border-radius: 30px;
+	margin-right: 10px;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: $fontWeightExtraBold;
+	color: $blackColor;
+	display: block;
+	float: left;
+}
+
+.product-tag:hover {
+	cursor: pointer;
+	background: $thirdColor;
+	color: $blackColor;
+}
+
+
+/***
+
+====================================================================
+    Order Confirmation Style
+====================================================================
+
+***/
+
+.content-box {
+	padding: 25px;
+	width: 100%;
+}
+
+.card-box {
+	width: 100%;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	border: 2px solid $blackColor;
+	.upper-box {
+		height: 90px;
+		background: $secondaryColor;
+		.image-box {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50px;
+			right: 30px;
+			img {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+			}
+		}
+	}
+	.lower-box {
+		min-height: 120px;
+		background: #FFF;
+		padding: 20px;
+		padding-top: 40px;
+		text-align: left;
+		h3.card-title {
+			font-size: 17px;
+			font-weight: $fontWeightExtraBold;
+			padding: 0 25% 10px 0;
+		}
+		span {
+			font-weight: $fontWeightSemiBold;
+			color: $blackColor;
+        }
+	}
 }
