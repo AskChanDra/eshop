@@ -1,0 +1,14 @@
+{
+  "name": "E-SHop",
+  "version": "1.0.0",
+  "description": "E-Shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Chandra Prakash Thapa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
