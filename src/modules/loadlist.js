@@ -50,19 +50,9 @@ let products = [
 ];
 
 function createProductList( products ) {
-    //console.log(products);
-    // let cartItems = localStorage.getItem('productsInCart');
-    // cartItems = JSON.parse(cartItems);
-
-    // let cartTotal = localStorage.getItem("totalCost");
-    // cartTotal = parseInt(cartTotal);
 
     let tagsArray = products.map( a => a.category);
     tagsArray = tagsArray.filter((x, i, a) => a.indexOf(x) == i);
-
-
-    // let productTag = document.querySelector('.product-tags');
-    // let productList = document.querySelector('.product-list');
     
     if( tagsArray && productTag ) {
         productTag.innerHTML = '<p class="product-tag" href="" data-rel="items">All</p>';
@@ -94,29 +84,7 @@ function createProductList( products ) {
     productFilter();
 }
 
-//renderProduct(productObjectList);
-/*
-function createProductList( productObjectList ) {
-    
-    // Test to see if there are products to display.
-    if ( productObjectList.code != undefined ) {
-        console.info( `No more product loaded becase ${productObjectList.code}.` );
-    } else {
-        productObjectList.forEach( productObject => {
-            let completed = prouctObject.product_status === 'Completed' ? 'class="completed"' : '';
-            let navListItem = document.createElement( 'li' );
-            navListItem.innerHTML = `
-                <a href="single.html?task=${taskObject.id}" ${completed}>
-                    <h2 class="task-title">${taskObject.title.rendered}</h2>
-                    <div class="task-date">${getDate(taskObject)}</div>
-                    <div class="task-status">${taskObject.task_status}</div>
-                </a>`;
-                productList.append(navListItem);
-        });
 
-        ///morePostsTrigger();
-    }    
-} */
 
 const getProductList = ( listRoute ) => {
 
